@@ -1,0 +1,30 @@
+<html>
+<head> <link rel = " stylesheet" type ="text/css" href ="include/style.css"></head>
+<body>
+<img src ="saraswati.jpg" style="width: 4em; height: 4em;"><b id ="big">Vidyardhi.com</b>
+<div class = "nav" id ="navbar">
+<ul>
+  <li><a href="index.php">Home</a></li>
+  <li><a class="active" href="news.html">News</a></li>
+  <li><a href="contact.html"> contact</a></li>
+  <li><a class="active" href ="faqs.html" >FAQs</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
+<h1><center>Here are some frequently asked questions....</center></h1>
+<button type="button" onclick="loadXMLDoc()">Click here</button>
+<p id="demo"></p>
+<script>
+function loadXMLDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML =
+      xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "faq.html", true);
+  xhttp.send();
+}
+</script>
+</body>
+</html>
